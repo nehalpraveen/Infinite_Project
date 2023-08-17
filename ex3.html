@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="container">
+            <div class="col-xs-2 col-sm-6 col-md-4 bin" data-wow-delay="0.1s">
+              <a class="cat-item roounded p-4" onclick="addContainer()">
+                <img src="img/add_image.png" class="b-img-1">
+                <h3 class="heading1" contenteditable="true">add blog number</h3>
+                <span class="text-truncate me-3">
+                  <p class="blog-heading-1" contenteditable="true">add blog name</p>
+                  <p class="blog-text" contenteditable="true">add blog description</p>
+                </span>
+                <span class="name">Name . Date</span>
+              </a>
+            </div>
+          </div>
+          <script>
+            function addContainer() {
+              var container = document.getElementById('container');
+              var newContainer = document.createElement('div');
+              newContainer.className = 'col-xs-2 col-sm-6 col-md-4 bin';
+              newContainer.setAttribute('data-wow-delay', '0.1s');
+              newContainer.innerHTML = '<a class="cat-item roounded p-4" onclick="addContainer()"><img src="img/add_image.png" class="b-img-1"><h3 class="heading1" contenteditable="true">add blog number</h3><span class="text-truncate me-3"><p class="blog-heading-1" contenteditable="true">add blog name</p><p class="blog-text" contenteditable="true">add blog description</p></span><span class="name">Name . Date</span></a>';
+              container.appendChild(newContainer);
+          }
+          const str1 = window.location.search;
+          const urlParams = new URLSearchParams(str1);
+          const pro = urlParams.get('mode');
+          if(pro == 'branding'){
+        document.getElementById("disabled").removeAttribute("href");
+        document.getElementById("exam").textContent = "HEllo";
+                }
+                
+          </script> <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5 " id="disabled">
+          <h1 class="m-0 text-primary" contenteditable="true">JobEntry</h1>
+      </a>
+      <p id="exam"></p>
+    </body>
+</html>

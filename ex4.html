@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+</head>
+<body>
+  <h1>Users</h1>
+
+  <script>
+    var MongoClient = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/mydb";
+
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      console.log("Database created!");
+      db.close();
+    });
+
+    function generateElements() {
+      var container = document.getElementById("container");
+      var numElements = 5; // Change this number as per your requirement
+
+      // Clear existing elements
+      container.innerHTML = "";
+
+      // Generate new elements
+      for (var i = 0; i < numElements; i++) {
+        var input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Placeholder " + (i + 1);
+        container.appendChild(input);
+      }
+    }
+  </script>
+  <button onclick="generateElements()">Button</button>
+  <div id="container">
+
+  </div>
+</body>
+</html>
